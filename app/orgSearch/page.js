@@ -1,56 +1,58 @@
 "use client"
-
+import Link from "next/link";
 import { useState, useEffect } from "react";
 import styles from "./page.module.css";
+import SingleCompany from "@/components/SingleCompany";
 
 export default function OrgSearch() {
-  const [searchQuery, setSearchQuery] = useState("");
-  const [data, setData] = useState(null);
-  const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 25;
+    const [searchQuery, setSearchQuery] = useState("");
+    const [data, setData] = useState(null);
+    const [currentPage, setCurrentPage] = useState(1);
 
-  useEffect(() => {
-    async function fetchData() {
-      const res = await fetch(`/api/search.json?q=${searchQuery}&page=${currentPage}`);
+    useEffect(() => {
+        async function fetchData() {
+            const res = await fetch(`/api/search.json?q=${searchQuery}&page=${currentPage}`);
 
-      if (!res.ok) {
-        throw new Error("Failed to fetch data");
-      }
+            if (!res.ok) {
+                throw new Error("Failed to fetch data");
+            }
 
-      const jsonData = await res.json();
-      setData(jsonData);
-    }
+            const jsonData = await res.json();
+            setData(jsonData);
+        }
 
-    fetchData();
+        fetchData();
     }, [searchQuery, currentPage]);
 
-  const totalResults = data?.total_results || 0;
-  const totalPages = Math.ceil(totalResults / itemsPerPage);
+    const handlePageChange = (newPage) => {
+        setCurrentPage(newPage);
+    };
 
-  const handlePageChange = (newPage) => {
-    setCurrentPage(newPage);
-  };
-
-  const dataMap = data?.organizations.map((company) => (
-    <li key={company.ein}>{company.name}</li>
+    const dataMap = data?.organizations.map((company) => (
+        <p key={company.ein}>
+            <Link href={`/${company.ein}`}>{company.name}</Link>
+        </p>
     ));
 
-  return (
-    <main>
-      <div className={styles.searchContainer}>
-        <input
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-        />
-        <button onClick={() => handlePageChange(1)}>Submit</button>
-      </div>
-      <ul>{dataMap}</ul>
-      <button onClick={(e) => handlePageChange(currentPage - 1)}>back</button>
-      <input 
-        value={currentPage} 
-        onChange={(e) => handlePageChange(parseInt(e.target.value ? e.target.value : 1))} 
-      />
-      <button onClick={(e) => handlePageChange(currentPage + 1)}>forward</button>
-    </main>
+    return (
+        <main>
+            <div className={styles.searchContainer}>
+                <h1>990 Reference Search</h1>
+                <input
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                />
+            </div>
+            <div className={styles.results}>
+                <ul>{dataMap}</ul>
+            </div>
+            <button onClick={(e) => handlePageChange(currentPage - 1)}>back</button>
+            <input
+                value={currentPage}
+                onChange={(e) => handlePageChange(parseInt(e.target.value ? e.target.value : 1))}
+            />
+            <button onClick={(e) => handlePageChange(currentPage + 1)}>forward</button>
+            <p>{currentPage} / {data?.num_pages}</p>
+        </main>
     );
 }

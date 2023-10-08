@@ -1,7 +1,6 @@
 .main {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
   padding: 6rem;
   min-height: 100vh;
@@ -47,4 +46,16 @@
   justify-content: center; /* Add this line */
   align-items: center;
   margin-top: 5em;
+}
+
+.results {
+  font-size: 2em;
+  text-align: left;
+  display: flex;
+  margin: auto;
+}
+
+.results li {
+  margin: .5em;
+  list-style: none;
 }
