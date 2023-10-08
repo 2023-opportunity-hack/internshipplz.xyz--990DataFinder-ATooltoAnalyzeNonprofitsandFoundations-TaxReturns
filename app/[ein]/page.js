@@ -1,5 +1,5 @@
 "use client"
-
+// import React from 'react';
 import { useEffect, useState } from 'react';
 
 export default function Company({ params }) {
@@ -23,16 +23,38 @@ export default function Company({ params }) {
   }, [params.ein]);
 
   return (
-    <div>
+    <div style={{ display: 'flex', justifyContent: 'center', backgroundColor: 'black', padding: '20px' }}>
       {companyData ? (
-        <div>
-          <h1>{companyData.name}</h1>
-          <p>City: {companyData.city}</p>
-          <p>State: {companyData.state}</p>
-          <p>Income amount: {companyData.income_amount}</p>
-          <p>Revenue amount: {companyData.revenue_amount}</p>
-          <p>NTEE Code: {companyData.ntee_code}</p>
-          {/* Add more details as needed */}
+        <div style={{ backgroundColor: 'white', padding: '20px', borderRadius: '10px' }}>
+          <h1 style={{ textAlign: 'center', marginBottom: '20px', color: 'black', fontFamily: 'Arial, sans-serif' }}>{companyData.name}</h1>
+          <table style={{ margin: '0 auto', borderCollapse: 'collapse' }}>
+            <tbody>
+              <tr>
+                <td style={{ fontWeight: 'bold', color: 'black', padding: '10px', border: '1px solid white' }}>EIN:</td>
+                <td style={{ padding: '10px', border: '1px solid white' }}>{companyData.ein}</td>
+              </tr>
+              <tr>
+                <td style={{ fontWeight: 'bold', color: 'black', padding: '10px', border: '1px solid white' }}>City:</td>
+                <td style={{ padding: '10px', border: '1px solid white' }}>{companyData.city}</td>
+              </tr>
+              <tr>
+                <td style={{ fontWeight: 'bold', color: 'black', padding: '10px', border: '1px solid white' }}>State:</td>
+                <td style={{ padding: '10px', border: '1px solid white' }}>{companyData.state}</td>
+              </tr>
+              <tr>
+                <td style={{ fontWeight: 'bold', color: 'black', padding: '10px', border: '1px solid white' }}>Income Amount:</td>
+                <td style={{ padding: '10px', border: '1px solid white' }}>{"$" + companyData.income_amount}</td>
+              </tr>
+              <tr>
+                <td style={{ fontWeight: 'bold', color: 'black', padding: '10px', border: '1px solid white' }}>Revenue Amount:</td>
+                <td style={{ padding: '10px', border: '1px solid white' }}>{"$" + companyData.revenue_amount}</td>
+              </tr>
+              <tr>
+                <td style={{ fontWeight: 'bold', color: 'black', padding: '10px', border: '1px solid white' }}>NTEE Code:</td>
+                <td style={{ padding: '10px', border: '1px solid white' }}>{companyData.ntee_code}</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       ) : (
         <p>Loading...</p>
@@ -40,4 +62,3 @@ export default function Company({ params }) {
     </div>
   );
 }
-
