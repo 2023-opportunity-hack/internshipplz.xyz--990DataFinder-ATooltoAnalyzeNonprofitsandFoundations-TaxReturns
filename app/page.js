@@ -19,7 +19,7 @@ export default function Home() {
         <Head>
           <title>The 990 Search</title>
         </Head>
-      </div>
+      </div> 
         <Image src={headerImage} alt=""/>
       <div className={styles.buttonContainer}>
       <div className={styles.button}>
