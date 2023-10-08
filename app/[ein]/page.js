@@ -29,7 +29,9 @@ export default function Company({ params }) {
           <h1>{companyData.name}</h1>
           <p>City: {companyData.city}</p>
           <p>State: {companyData.state}</p>
-          <p></p>
+          <p>Income amount: {companyData.income_amount}</p>
+          <p>Revenue amount: {companyData.revenue_amount}</p>
+          <p>NTEE Code: {companyData.ntee_code}</p>
           {/* Add more details as needed */}
         </div>
       ) : (
