@@ -29,6 +29,7 @@ export default function Company({ params }) {
           <h1>{companyData.name}</h1>
           <p>City: {companyData.city}</p>
           <p>State: {companyData.state}</p>
+          <p></p>
           {/* Add more details as needed */}
         </div>
       ) : (

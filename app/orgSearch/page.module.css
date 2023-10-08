@@ -6,6 +6,10 @@
   min-height: 100vh;
 }
 
+.results a {
+  text-decoration: none;
+}
+
 .main button {
   background: none;
   border: 1px solid purple;
@@ -58,4 +62,5 @@
 .results li {
   margin: .5em;
   list-style: none;
+  text-decoration: none;
 }
