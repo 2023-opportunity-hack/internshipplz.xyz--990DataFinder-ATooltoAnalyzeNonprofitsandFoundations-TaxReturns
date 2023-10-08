@@ -1,0 +1,25 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6rem;
+  min-height: 100vh;
+}
+
+.main button {
+  background: none;
+  border: 1px solid purple;
+  border-radius: .5rem;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  padding: .5rem;
+  font-size: 1.25rem;
+}
+
+.buttonContainer {
+  display: flex;
+  width: 75vw;
+  justify-content: space-evenly;
+}
