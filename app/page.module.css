@@ -7,8 +7,8 @@
   min-height: 100vh;
 }
 
-.main button {
-  background: darkblue;
+.navLink a {
+  background: none;
   border: 1px solid purple;
   border-radius: .5rem;
   font: inherit;
@@ -16,6 +16,12 @@
   outline: inherit;
   padding: .5rem;
   font-size: 1.25rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.main .navLink:link {
+    text-decoration: none;
 }
 
 .buttonContainer {
@@ -38,8 +44,8 @@
 }
 
 .footerButton {
-  width: 100px;
-  height: 100px;
+  width: 70px;
+  height: 70px;
 }
 
 .footerButton button {
@@ -49,6 +55,6 @@
 }
 
 .footerButton img {
-  width: 100px;
-  height: 100px;
+  width: 70px;
+  height: 70px;
 }
