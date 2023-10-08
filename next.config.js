@@ -1,4 +1,15 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+const nextConfig = {
+    cors: false
+}
 
-module.exports = nextConfig
+module.exports = {
+    async rewrites() {
+      return [
+        {
+          source: '/api/:path*',
+          destination: 'https://projects.propublica.org/nonprofits/api/v2/:path*',
+        },
+      ];
+    },
+  };

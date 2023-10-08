@@ -1,0 +1,61 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6rem;
+  min-height: 100vh;
+}
+
+.main button {
+  background: none;
+  border: 1px solid purple;
+  border-radius: .5rem;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  padding: .5rem;
+  font-size: 1.25rem;
+}
+
+.buttonContainer {
+  display: flex;
+  width: 75vw;
+  justify-content: space-evenly;
+}
+
+.searchContainer link {
+  border: 1px solid purple;
+  background: none;
+  padding: .5rem;
+  font-size: 1.25rem;
+  border-radius: .5rem;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+.searchContainer input {
+  width: 50vw;
+  height: 2rem;
+  padding: .5rem;
+}
+
+.searchContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Add this line */
+  align-items: center;
+  margin-top: 5em;
+}
+
+.results {
+  font-size: 2em;
+  text-align: left;
+  display: flex;
+  margin: auto;
+}
+
+.results li {
+  margin: .5em;
+  list-style: none;
+}

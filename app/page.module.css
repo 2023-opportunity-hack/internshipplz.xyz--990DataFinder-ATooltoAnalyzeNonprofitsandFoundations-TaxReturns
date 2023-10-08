@@ -7,7 +7,7 @@
   min-height: 100vh;
 }
 
-.main button {
+.navLink a {
   background: none;
   border: 1px solid purple;
   border-radius: .5rem;
@@ -16,10 +16,45 @@
   outline: inherit;
   padding: .5rem;
   font-size: 1.25rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.main .navLink:link {
+    text-decoration: none;
 }
 
 .buttonContainer {
   display: flex;
   width: 75vw;
   justify-content: space-evenly;
+}
+
+.button button {
+  background-color: darkblue;
+  color: white;
+}
+
+/* Styles for the footer and buttons */
+.footer {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  margin-bottom: -90px;
+}
+
+.footerButton {
+  width: 70px;
+  height: 70px;
+}
+
+.footerButton button {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
+
+.footerButton img {
+  width: 70px;
+  height: 70px;
 }
