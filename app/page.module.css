@@ -8,7 +8,7 @@
 }
 
 .main button {
-  background: none;
+  background: darkblue;
   border: 1px solid purple;
   border-radius: .5rem;
   font: inherit;
