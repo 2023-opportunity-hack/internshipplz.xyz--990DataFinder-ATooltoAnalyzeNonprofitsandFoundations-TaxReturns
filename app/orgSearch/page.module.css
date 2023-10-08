@@ -24,7 +24,7 @@
   justify-content: space-evenly;
 }
 
-.searchContainer button {
+.searchContainer link {
   border: 1px solid purple;
   background: none;
   padding: .5rem;
@@ -41,7 +41,10 @@
   padding: .5rem;
 }
 
-div .searchContainer {
+.searchContainer {
   display: flex;
   flex-direction: column;
+  justify-content: center; /* Add this line */
+  align-items: center;
+  margin-top: 5em;
 }

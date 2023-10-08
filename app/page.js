@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import styles from './page.module.css'
+import Link from 'next/link'
 
 export default function Home() {
   return (
@@ -9,15 +10,17 @@ export default function Home() {
     <main className={styles.main}>
       <div className={styles.buttonContainer}>
       <div className={styles.button}>
-        <button>
+        <p className={styles.navLink}>
+          <Link href="/orgSearch">
           Search for Organizations
-        </button>
+          </Link>
+          </p>
       </div>
-      <div className={styles.button}>
-        <button>
+      <p className={styles.navLink}>
+          <Link href="/orgSearch">
           Search for Non-Profit Salaries
-        </button>
-      </div>
+          </Link>
+          </p>
       </div>
     </main>
   )
